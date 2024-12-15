@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePay - Solutions Financières Premium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+
+        header {
+            background-color: #E3001B;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-color: #F2F2F2;
+            text-align: center;
+            padding: 50px 20px;
+            color: #E3001B;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #E3001B;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 30px 20px;
+        }
+
+        .section:nth-child(even) {
+            background-color: #FFFFFF;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .services div {
+            text-align: center;
+            width: 30%;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .testimonials div {
+            background-color: #F2F2F2;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 80%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>SecurePay</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#services">Produits et Services</a>
+            <a href="#fidelite">Fidélité</a>
+            <a href="#apropos">À propos</a>
+            <a href="#contact">Contactez-nous</a>
+        </nav>
+        <a href="#" style="color: white;">Se connecter</a>
+    </header>
+
+    <section class="hero">
+        <h1>Des solutions financières premium pour chaque étape de votre vie</h1>
+        <button>Découvrir nos services</button>
+    </section>
+
+    <section class="section" id="services">
+        <h2 style="text-align: center;">Nos services principaux</h2>
+        <div class="services">
+            <div>
+                <h3>Cartes de crédit premium</h3>
+                <p>Des avantages exclusifs pour répondre à vos besoins.</p>
+            </div>
+            <div>
+                <h3>Services de paiement</h3>
+                <p>Des solutions rapides et sécurisées pour particuliers et entreprises.</p>
+            </div>
+            <div>
+                <h3>Gestion de trésorerie</h3>
+                <p>Optimisez vos finances avec nos outils innovants.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="fidelite">
+        <h2 style="text-align: center;">Rejoignez notre programme de fidélité</h2>
+        <p style="text-align: center;">Profitez de récompenses, cashbacks et bien plus encore.</p>
+    </section>
+
+    <section class="section" id="temoignages">
+        <h2 style="text-align: center;">Ce que nos clients disent de nous</h2>
+        <div class="testimonials">
+            <div>"SecurePay a transformé ma façon de gérer mes finances. Je recommande vivement !" - Jean Dupont</div>
+            <div>"Des services rapides et une expérience utilisateur exceptionnelle. Merci, SecurePay !" - Marie Lemoine
+            </div>
+            <div>"Je suis impressionné par les récompenses proposées. Un programme de fidélité au top !" - Ahmed Ben Ali
+            </div>
+            <div>"Une solution complète et fiable pour mes finances professionnelles." - Sophie Morel</div>
+        </div>
+    </section>
+
+    <section class="section" id="reseaux">
+        <h2 style="text-align: center;">Suivez-nous</h2>
+        <p style="text-align: center;">Instagram | LinkedIn | YouTube</p>
+    </section>
+
+    <footer>
+        &copy; 2024 SecurePay | Politique de confidentialité | Assistance | FAQ
+    </footer>
+
+</body>
+
+</html>
