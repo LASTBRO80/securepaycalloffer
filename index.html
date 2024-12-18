@@ -5,93 +5,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecurePay - Solutions Financières Premium</title>
+
+    <!-- CSS Externes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+
+    <!-- CSS Interne -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F7F7F7;
+            color: #333;
+            background-color: #f7f7f7;
         }
 
         header {
             background-color: #E3001B;
             color: white;
-            padding: 15px;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        header nav {
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
             display: flex;
-            gap: 15px;
+            align-items: center;
+        }
+
+        header .logo i {
+            margin-right: 10px;
         }
 
         header nav a {
+            margin: 0 15px;
             color: white;
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #FFD700;
         }
 
         .hero {
-            background-color: #F2F2F2;
+            height: 90vh;
+            background-image: url('https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px 20px;
-            color: #E3001B;
         }
 
         .hero h1 {
-            margin: 0;
-            font-size: 24px;
+            font-size: 3.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .hero button {
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #E3001B;
-            color: white;
+            background-color: #FFD700;
+            color: #E3001B;
+            padding: 15px 30px;
+            font-size: 1.2em;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .section {
-            padding: 30px 20px;
+        .hero button:hover {
+            background-color: white;
+            transform: scale(1.1);
         }
 
-        .section:nth-child(even) {
-            background-color: #FFFFFF;
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #services {
+            background: #f9f9f9;
         }
 
         .services {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .services div {
-            text-align: center;
-            width: 30%;
+        .service {
+            max-width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
-        .testimonials {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
+        .service:hover {
+            transform: translateY(-10px);
         }
 
-        .testimonials div {
-            background-color: #F2F2F2;
-            padding: 15px;
-            border-radius: 5px;
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service h3 {
+            color: #E3001B;
+            margin: 15px 0;
+        }
+
+        #temoignages blockquote {
+            background: #FFD700;
+            color: #333;
+            font-size: 1.2em;
+            font-style: italic;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
             max-width: 80%;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         footer {
-            background-color: #333333;
+            background-color: #333;
             color: white;
             text-align: center;
-            padding: 15px;
-            font-size: 12px;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -99,66 +168,60 @@
 <body>
 
     <header>
-        <div>SecurePay</div>
+        <div class="logo">
+            <i class="fas fa-university"></i> SecurePay
+        </div>
         <nav>
             <a href="#">Accueil</a>
-            <a href="#services">Produits et Services</a>
-            <a href="#fidelite">Fidélité</a>
-            <a href="#apropos">À propos</a>
-            <a href="#contact">Contactez-nous</a>
+            <a href="#services">Services</a>
+            <a href="#temoignages">Témoignages</a>
+            <a href="#contact">Contact</a>
         </nav>
-        <a href="#" style="color: white;">Se connecter</a>
+        <a href="#" class="btn-login hvr-sweep-to-right">Se connecter</a>
     </header>
 
     <section class="hero">
-        <h1>Des solutions financières premium pour chaque étape de votre vie</h1>
+        <h1 data-aos="fade-down">Des solutions financières adaptées</h1>
+        <p data-aos="fade-up">Simplifiez la gestion de vos finances avec SecurePay</p>
         <button>Découvrir nos services</button>
     </section>
 
-    <section class="section" id="services">
-        <h2 style="text-align: center;">Nos services principaux</h2>
+    <section id="services">
+        <h2 data-aos="fade-up">Nos Services</h2>
         <div class="services">
-            <div>
+            <div class="service" data-aos="zoom-in">
+                <img src="https://images.pexels.com/photos/7821717/pexels-photo-7821717.jpeg" alt="Cartes de crédit premium">
                 <h3>Cartes de crédit premium</h3>
-                <p>Des avantages exclusifs pour répondre à vos besoins.</p>
+                <p>Des avantages exclusifs pour tous vos besoins.</p>
             </div>
-            <div>
-                <h3>Services de paiement</h3>
-                <p>Des solutions rapides et sécurisées pour particuliers et entreprises.</p>
+            <div class="service" data-aos="zoom-in">
+                <img src="https://images.pexels.com/photos/6969654/pexels-photo-6969654.jpeg" alt="Paiement sécurisé">
+                <h3>Paiements sécurisés</h3>
+                <p>Des transactions rapides et fiables.</p>
             </div>
-            <div>
-                <h3>Gestion de trésorerie</h3>
-                <p>Optimisez vos finances avec nos outils innovants.</p>
+            <div class="service" data-aos="zoom-in">
+                <img src="https://images.pexels.com/photos/7876672/pexels-photo-7876672.jpeg" alt="Gestion financière">
+                <h3>Gestion financière</h3>
+                <p>Optimisez vos finances avec nos outils.</p>
             </div>
         </div>
     </section>
 
-    <section class="section" id="fidelite">
-        <h2 style="text-align: center;">Rejoignez notre programme de fidélité</h2>
-        <p style="text-align: center;">Profitez de récompenses, cashbacks et bien plus encore.</p>
-    </section>
-
-    <section class="section" id="temoignages">
-        <h2 style="text-align: center;">Ce que nos clients disent de nous</h2>
-        <div class="testimonials">
-            <div>"SecurePay a transformé ma façon de gérer mes finances. Je recommande vivement !" - Jean Dupont</div>
-            <div>"Des services rapides et une expérience utilisateur exceptionnelle. Merci, SecurePay !" - Marie Lemoine
-            </div>
-            <div>"Je suis impressionné par les récompenses proposées. Un programme de fidélité au top !" - Ahmed Ben Ali
-            </div>
-            <div>"Une solution complète et fiable pour mes finances professionnelles." - Sophie Morel</div>
-        </div>
-    </section>
-
-    <section class="section" id="reseaux">
-        <h2 style="text-align: center;">Suivez-nous</h2>
-        <p style="text-align: center;">Instagram | LinkedIn | YouTube</p>
+    <section id="temoignages">
+        <h2 data-aos="fade-up">Avis de nos clients</h2>
+        <blockquote data-aos="fade-left">"Une plateforme fiable et rapide. Merci SecurePay !" - Jean Dupont</blockquote>
+        <blockquote data-aos="fade-right">"Le meilleur choix pour mes finances personnelles et professionnelles !" - Sophie Morel</blockquote>
     </section>
 
     <footer>
-        &copy; 2024 SecurePay | Politique de confidentialité | Assistance | FAQ
+        &copy; 2024 SecurePay | <a href="#">Politique de confidentialité</a> | <a href="#">FAQ</a>
     </footer>
 
+    <!-- JS Externes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
